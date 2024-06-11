@@ -71,6 +71,76 @@ main section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+button#love-button {
+    background-color: #ff6699;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+button#love-button:hover {
+    background-color: #ff3366;
+}
+
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.heart {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    animation: explode 1s ease-out forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 50px;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(1.5) rotate(-45deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
 footer {
     background-color: rgba(255, 204, 204, 0.8);
     color: #fff;
